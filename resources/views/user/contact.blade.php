@@ -1,6 +1,6 @@
 @include('includes.header')
 @include('includes.nav')
-<h1>About Me</h1>
+<h1>Contact With Me</h1>
 <pre>
 {{ $contact->Content }}
 </pre>
