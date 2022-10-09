@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SkillsController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,4 @@ Route::get('/', function () {
 
 Route::get('/contact', [ContactController::class, 'indexUsers']);
 Route::get('/skills', [SkillsController::class, 'indexUsers']);
+Route::get('/home', [HomeController::class, 'indexUsers']);
