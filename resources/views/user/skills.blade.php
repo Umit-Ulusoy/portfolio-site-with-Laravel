@@ -1,5 +1,6 @@
-@include('includes.header')
-@include('includes.nav')
+@extends('layouts.default')
+@section('content')
+
 <h1>My Skils</h1>
 @foreach ($skills as $skill)
 <div id='skill-{{ $skill->Id }}'>
@@ -10,4 +11,4 @@
 </div>
 @endforeach
 
-@include('includes.footer')
+@stop

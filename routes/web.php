@@ -16,10 +16,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/contact', [ContactController::class, 'indexUsers']);
-Route::get('/skills', [SkillsController::class, 'indexUsers']);
+Route::get('/', [HomeController::class, 'indexUsers']);
 Route::get('/home', [HomeController::class, 'indexUsers']);
+Route::get('/skills', [SkillsController::class, 'indexUsers']);
+Route::get('/contact', [ContactController::class, 'indexUsers']);
