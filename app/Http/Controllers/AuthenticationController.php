@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
  
-class LoginController extends Controller
+class AuthenticationController extends Controller
 {
          
     //defining the functions which we need
     
-    public function authenticate(Request $request)
+    public function login(Request $request)
     {
         
         $credentials = $request->validate([
@@ -27,5 +27,14 @@ class LoginController extends Controller
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ]);
+    }
+
+    public function logout(Request $request)
+    {
+
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/login');
     }
 }

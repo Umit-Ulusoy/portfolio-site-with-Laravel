@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SkillsController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AuthenticationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +30,9 @@ Route::get('/login', function()
     return view('admin.login');
 })->name('login');
 
-Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/login', [AuthenticationController::class, 'login']);
+Route::get('/logout', [AuthenticationController::class, 'logout']);
+
 
 Route::get('/panel', function ()
 {
