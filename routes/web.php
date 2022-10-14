@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SkillsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,27 @@ use App\Http\Controllers\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+//Defining routes for admins
+Route::get('/admin', function ()
+{
+    return view('admin.panel');
+})->middleware('auth');
+
+
+Route::get('/login', function()
+{
+    return view('admin.login');
+})->name('login');
+
+Route::post('/login', [LoginController::class, 'authenticate']);
+
+Route::get('/panel', function ()
+{
+    return '<h1>Paneldesiin</h1>';
+})->middleware('auth');
+
 
 Route::get('/', [HomeController::class, 'indexUsers']);
 Route::get('/home', [HomeController::class, 'indexUsers']);
