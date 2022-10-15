@@ -1,4 +1,5 @@
 @extends('layouts.default')
+@section('title', 'Skills | My Site')
 @section('content')
 
 <h1>My Skils</h1>

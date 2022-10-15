@@ -1,4 +1,5 @@
 @extends('layouts.default')
+@section('title', 'Contact | My Site')
 @section('content')
 
 <h1>Contact With Me</h1>

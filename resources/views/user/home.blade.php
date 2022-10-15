@@ -1,4 +1,5 @@
 @extends('layouts.default')
+@section('title', 'Home | My Site')
 @section('content')
 
 <h1>{{ $home->Headline }}</h1>

@@ -1,3 +1,8 @@
+
+        @if(Session::has('success'))
+        <p class="text-success">{{session('success')}}</p>
+        @endif
+        
 @if ($errors->has('email'))
     <span role="alert" class="invalid-feedback">
         {{ $errors->first('email') }}
