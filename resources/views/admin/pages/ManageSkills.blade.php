@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.admin')
 @section('title', 'Manage Skills')
 @section('content')
 <h1>Manage Skills Page</h1>

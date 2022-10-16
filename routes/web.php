@@ -19,10 +19,8 @@ use App\Http\Controllers\AuthenticationController;
 
 
 //Defining routes for admins
-Route::get('/admin', function ()
-{
-    return view('admin.panel');
-})->middleware('auth');
+Route::get('/admin', [HomeController::class, 'indexAdmins'])->middleware('auth');
+Route::get('/admin/home', [HomeController::class, 'indexAdmins'])->middleware('auth');
 
 
 Route::get('/login', function()
@@ -32,13 +30,6 @@ Route::get('/login', function()
 
 Route::post('/login', [AuthenticationController::class, 'login']);
 Route::get('/logout', [AuthenticationController::class, 'logout']);
-
-
-Route::get('/panel', function ()
-{
-    return '<h1>Paneldesiin</h1>';
-})->middleware('auth');
-
 
 Route::get('/', [HomeController::class, 'indexUsers']);
 Route::get('/home', [HomeController::class, 'indexUsers']);
