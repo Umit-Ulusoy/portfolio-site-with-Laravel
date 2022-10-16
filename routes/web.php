@@ -22,6 +22,9 @@ use App\Http\Controllers\AuthenticationController;
 Route::get('/admin', [HomeController::class, 'indexAdmins'])->middleware('auth');
 Route::get('/admin/home', [HomeController::class, 'indexAdmins'])->middleware('auth');
 Route::put('/admin/home', [HomeController::class, 'update'])->middleware('auth');
+//defining routes for contact page
+Route::get('/admin/contact', [ContactController::class, 'indexAdmins']);
+Route::put('/admin/contact', [ContactController::class, 'update']);
 
 
 Route::get('/login', function()

@@ -11,4 +11,6 @@ class contact extends Model
 
     protected $fillable = ['Content', 'Adress', 'PhoneNumber'];
     protected $table = 'contact';
+     protected $primaryKey = 'Id';
+     public$timestamps = false;
 }
