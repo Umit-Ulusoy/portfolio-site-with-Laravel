@@ -21,6 +21,7 @@ use App\Http\Controllers\AuthenticationController;
 //Defining routes for admins
 Route::get('/admin', [HomeController::class, 'indexAdmins'])->middleware('auth');
 Route::get('/admin/home', [HomeController::class, 'indexAdmins'])->middleware('auth');
+Route::put('/admin/home', [HomeController::class, 'update'])->middleware('auth');
 
 
 Route::get('/login', function()
