@@ -11,5 +11,6 @@
 </pre>
 </div>
 @endforeach
+{{ $skills->links() }}
 
 @stop
