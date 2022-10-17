@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Home extends Model
 {
     use HasFactory;
-    protected $fillable = ['Headline', 'Subline'];
-    protected $table = 'home';
+        protected $table = 'home';
     protected $primaryKey = 'Id';
         public $timestamps = false;
 }

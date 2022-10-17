@@ -9,6 +9,7 @@ class Skills extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['Skill', 'Description'];
     protected $table = 'skills';
     protected $primaryKey = 'Id';
     public $timestamps = false;

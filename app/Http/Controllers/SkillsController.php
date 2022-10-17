@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Skills;
+use RecursiveArrayIterator;
 
 class SkillsController extends Controller
 {
@@ -11,7 +12,7 @@ class SkillsController extends Controller
 public function indexUsers()
 {
 
-    $skills = Skills::paginate(4);
+    $skills = Skills::select()->orderBy('Id', 'asc')->paginate(4);
 
     return view('user.skills', ['skills' => $skills]);
 
@@ -20,11 +21,37 @@ public function indexUsers()
 public function indexAdmins()
 {
 
-    $skills = Skills::paginate(4);
+    $skills = Skills::select()->orderBy('Id', 'asc')->paginate(4);
 
     return view('admin.pages.ManageSkills', ['skills' => $skills]);
 }
 
+//Defining store method to add a new record to the database
+public function store(Request $request)
+{
+
+    //Validating the requests
+    $this->validate($request, [
+        'skill' => 'required',
+        'description' => 'required'
+    ]);
+//Creating model to insert a new record to the database
+    $skill = Skills::create([
+        'Skill' => $request->input('skill'),
+        'Description' => $request->input('description')
+    ]);
+
+    if ($skill->save() > 0)
+    {
+
+        return back()->with('success', 'The skill is added successfully');
+    }else{
+
+        return back()->withErrors('failled', 'The skill could not be added!');
+    }
+}
+
+//Defining deleteOrUpdate method to modify skills in the database
 public function deleteOrUpdate(Request $request)
 {
 

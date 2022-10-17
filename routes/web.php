@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Skills;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SkillsController;
@@ -28,7 +29,8 @@ Route::get('/admin/contact', [ContactController::class, 'indexAdmins']);
 Route::put('/admin/contact', [ContactController::class, 'update']);
 //Defining routes for skills page
 Route::get('/admin/skills', [SkillsController::class, 'indexAdmins']);
-Route::post('/admin/skills', [SkillsController::class, 'deleteOrUpdate']);
+Route::post('/admin/skills', [SkillsController::class, 'store']);
+Route::put('/admin/skills', [SkillsController::class, 'deleteOrUpdate']);
 });
 
 
