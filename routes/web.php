@@ -27,6 +27,7 @@ Route::get('/admin/contact', [ContactController::class, 'indexAdmins']);
 Route::put('/admin/contact', [ContactController::class, 'update']);
 //Defining routes for skills page
 Route::get('/admin/skills', [SkillsController::class, 'indexAdmins']);
+Route::post('/admin/skills', [SkillsController::class, 'deleteOrUpdate']);
 
 
 Route::get('/login', function()

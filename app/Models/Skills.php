@@ -10,4 +10,6 @@ class Skills extends Model
     use HasFactory;
 
     protected $table = 'skills';
+    protected $primaryKey = 'Id';
+    public $timestamps = false;
 }
