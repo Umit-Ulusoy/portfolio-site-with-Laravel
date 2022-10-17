@@ -39,9 +39,11 @@ Route::get('/login', function()
     return view('admin.login');
 })->name('login');
 
+//Defining routes for log in/log out actions
 Route::post('/login', [AuthenticationController::class, 'login']);
-Route::get('/logout', [AuthenticationController::class, 'logout']);
+Route::get('/logout', [AuthenticationController::class, 'logout'])->middleware('auth');
 
+//Defining routes for users
 Route::get('/', [HomeController::class, 'indexUsers']);
 Route::get('/home', [HomeController::class, 'indexUsers']);
 Route::get('/skills', [SkillsController::class, 'indexUsers']);

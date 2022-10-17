@@ -9,6 +9,7 @@ use RecursiveArrayIterator;
 class SkillsController extends Controller
 {
     
+    //Redirecting users to skills page with its record(s)
 public function indexUsers()
 {
 
@@ -18,6 +19,7 @@ public function indexUsers()
 
 }
 
+//Redirecting admins to skills page with its record(s)
 public function indexAdmins()
 {
 
@@ -35,12 +37,13 @@ public function store(Request $request)
         'skill' => 'required',
         'description' => 'required'
     ]);
-//Creating model to insert a new record to the database
+//Creating a model to insert a new record to the database
     $skill = Skills::create([
         'Skill' => $request->input('skill'),
         'Description' => $request->input('description')
     ]);
 
+    //Checking wheter the insertion is successful
     if ($skill->save() > 0)
     {
 

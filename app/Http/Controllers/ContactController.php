@@ -7,7 +7,8 @@ use App\Models\Contact;
 
 class ContactController extends Controller
 {
-    //redirecting to the page for users
+
+    //Redirecting users to contact page with its data(s)
     public function indexUsers()
     {
 
@@ -16,6 +17,7 @@ class ContactController extends Controller
         return view('user.contact', ['contact' => $contact]);
     }
 
+    //Redirecting admins to contact page with its data(s)
     public function indexAdmins()
     {
 
@@ -27,17 +29,20 @@ class ContactController extends Controller
     public function update(Request $request)
     {
 
+        //Validating the requests
         $this->validate($request, [
             'Content' => 'required',
             'Adress' => 'required',
             'PhoneNumber' => 'required'
         ]);
 
+        //Creating a model to update a record on database by its id
         $contact = Contact::find(1);
         $contact->Content = $request->input('Content');
         $contact->Adress = $request->input('Adress');
         $contact->PhoneNumber = $request->input('PhoneNumber');
 
+        //Checking wheter the updating is successful
         if ($contact->save() > 0)
         {
 
