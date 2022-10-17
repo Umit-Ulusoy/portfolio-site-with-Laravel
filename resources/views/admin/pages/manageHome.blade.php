@@ -2,17 +2,6 @@
 @section('title', 'Manage Home')
 @section('content')
 
-@if(Session::has('success'))
-<div role="alert">{{ session('success') }}</div>
-@endif
-
-
-@if($errors->all())
-@foreach($errors->all() as $error)
-<div role="alert">{{ $error }}</div>
-@endforeach
-@endif
-
 <h1>Manage Home Page</h1>
 You can edit data of the home page <br />
 <form action="/admin/home" method="POST">

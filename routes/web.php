@@ -17,17 +17,19 @@ use App\Http\Controllers\AuthenticationController;
 |
 */
 
-
+Route::middleware('auth')->group(function ()
+{
 //Defining routes for admins
-Route::get('/admin', [HomeController::class, 'indexAdmins'])->middleware('auth');
-Route::get('/admin/home', [HomeController::class, 'indexAdmins'])->middleware('auth');
-Route::put('/admin/home', [HomeController::class, 'update'])->middleware('auth');
+Route::get('/admin', [HomeController::class, 'indexAdmins']);
+Route::get('/admin/home', [HomeController::class, 'indexAdmins']);
+Route::put('/admin/home', [HomeController::class, 'update']);
 //defining routes for contact page
 Route::get('/admin/contact', [ContactController::class, 'indexAdmins']);
 Route::put('/admin/contact', [ContactController::class, 'update']);
 //Defining routes for skills page
 Route::get('/admin/skills', [SkillsController::class, 'indexAdmins']);
 Route::post('/admin/skills', [SkillsController::class, 'deleteOrUpdate']);
+});
 
 
 Route::get('/login', function()

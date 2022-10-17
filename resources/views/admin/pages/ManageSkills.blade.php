@@ -2,14 +2,6 @@
 @section('title', 'Manage Skills')
 @section('content')
 
-@if(Session::has('success'))
-<div role="alert">{{ session('success') }}</div>
-@elseif($errors->all())
-@foreach($errors->all() as $error)
-<div role="alert">{{ $error }}</div>
-@endforeach
-@endif
-
 <h1>Manage Skills Page</h1>
 You can edit the data of the skills page <br />
 @foreach($skills as $skill)

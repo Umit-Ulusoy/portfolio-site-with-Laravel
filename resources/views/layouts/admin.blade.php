@@ -9,6 +9,10 @@
         @include('includes.admin.header')
     </header>
 
+    <div id="notificationBar">
+        @include('includes.admin.notifications')
+</div>
+
     <div id="content">
         @yield('content')
 </div>
