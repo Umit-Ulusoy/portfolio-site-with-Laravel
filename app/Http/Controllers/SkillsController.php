@@ -12,7 +12,7 @@ class SkillsController extends Controller
 public function indexUsers()
 {
 
-    $skills = Skills::select()->orderBy('Id', 'asc')->paginate(4);
+    $skills = Skills::select()->orderBy('Id', 'desc')->paginate(4);
 
     return view('user.skills', ['skills' => $skills]);
 
@@ -21,7 +21,7 @@ public function indexUsers()
 public function indexAdmins()
 {
 
-    $skills = Skills::select()->orderBy('Id', 'asc')->paginate(4);
+    $skills = Skills::select()->orderBy('Id', 'desc')->paginate(4);
 
     return view('admin.pages.ManageSkills', ['skills' => $skills]);
 }

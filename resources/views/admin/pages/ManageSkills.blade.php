@@ -16,6 +16,8 @@ You can add a new skill here <br />
 
 <h1>Edit Your Skills</h1>
 You can edit the data of the skills page <br />
+
+@if($skills->count() > 0)
 @foreach($skills as $skill)
 <div id="skill-{{ $skill->Id }}">
 <form action="/admin/skills" method="POST">
@@ -30,5 +32,8 @@ You can edit the data of the skills page <br />
 </div>
 @endforeach
 {{ $skills->links() }}
+@else
+<div role="alert"> Not Found</div>
+@endif
 
 @stop
