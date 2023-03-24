@@ -1,6 +1,3 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
-<div align="center">
 # A Simple Portfolio Site With Laravel
 This is my first Laravel project, and it's easy to install and use. It only includes backend code and doesn't have any CSS or styling.
 ## Getting Started
@@ -24,4 +21,3 @@ Clone: "git clone https://github.com/Umit-Ulusoy/portfolio-site-with-Laravel.git
 "php artisan serve"
 ### License:
 This project is licensed under the MIT License. [Learn more about this license](https://docs.github.com/articles/licensing-a-repository).
-</div>
